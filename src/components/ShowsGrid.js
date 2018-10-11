@@ -1,9 +1,10 @@
 import React from 'react';
+import Show from './Show.js';
 
 const ShowsGrid = (props) => (
   <ul className="shows-grid">
     {props.shows.map(show => (
-      <li key={show.id}>{show.name}</li>
+      <Show showInfo={show} key={show.id}/>
     ))}
   </ul>
 ) 

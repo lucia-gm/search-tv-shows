@@ -14,7 +14,6 @@ class App extends Component {
   componentDidMount() {
     ShowsAPI.getPopular()
     .then(response => {
-      console.log(response)
       this.setState({popularShows: response})})
   }
 

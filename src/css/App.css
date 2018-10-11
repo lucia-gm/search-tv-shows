@@ -14,3 +14,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Shows-grid styles */
+.shows-grid {
+  max-width: 96rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shows-grid li {
+  width: 20rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.shows-grid img {
+  height: 19.5rem;
+}
+
+.shows-grid h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.shows-grid p {
+  font-size: 1.4rem;
+  margin: 0;
+}
