@@ -4,7 +4,7 @@ class Show extends Component {
   
   render() { 
     const { showInfo } = this.props;
-    const imgLink = `https://image.tmdb.org/t/p/w500/${showInfo.poster_path}`;
+    const imgLink = showInfo.poster_path ? `https://image.tmdb.org/t/p/w500/${showInfo.poster_path}` : `${require("../images/img-placeholder.png")}`;
 
     return (
       <li>

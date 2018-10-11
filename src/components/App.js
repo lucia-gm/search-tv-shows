@@ -21,12 +21,11 @@ class App extends Component {
   handleUpdateSearch = (query) => {
     ShowsAPI.search(query)
     .then(response => this.setState({searchedShows: response}))
-    
   }
 
   render() {
     const { popularShows, searchedShows } = this.state;
-    let featuredShows = (searchedShows.length > 1) ? searchedShows : popularShows;
+    let featuredShows = (searchedShows && searchedShows.length > 0) ? searchedShows : popularShows;
     console.log(popularShows);
 
     return (
