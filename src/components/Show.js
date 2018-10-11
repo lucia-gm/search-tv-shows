@@ -8,7 +8,7 @@ class Show extends Component {
 
     return (
       <li>
-        <img src={imgLink} alt={showInfo.name}></img>
+        <img src={imgLink} alt={showInfo.name}/>
         <h4>{showInfo.name}</h4>    
         <p>{showInfo.vote_average}</p>
         <p>{showInfo.first_air_date}</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as ShowsAPI from '../ShowsAPI';
 import ShowsGrid from './ShowsGrid';
+import SideBar from './SideBar';
 import '../css/App.css';
 
 class App extends Component {
@@ -8,22 +9,30 @@ class App extends Component {
     super()
     this.state = {
       popularShows: [],
+      searchedShows: [],
     }
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     ShowsAPI.getPopular()
-    .then(response => {
-      this.setState({popularShows: response})})
+    .then(response => this.setState({popularShows: response}))
+  }
+
+  handleUpdateSearch = (query) => {
+    ShowsAPI.search(query)
+    .then(response => this.setState({searchedShows: response}))
+    
   }
 
   render() {
-    const {popularShows} = this.state
-    console.log(popularShows)
+    const { popularShows, searchedShows } = this.state;
+    let featuredShows = (searchedShows.length > 1) ? searchedShows : popularShows;
+    console.log(popularShows);
 
     return (
       <div className="App">
-        <ShowsGrid shows={popularShows}/>
+        <SideBar updateSearch={this.handleUpdateSearch}/>
+        <ShowsGrid shows={featuredShows}/>
       </div>
     );
   }

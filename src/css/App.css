@@ -15,18 +15,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+/* App styles */
+.App {
+  display: flex;
+}
+
+
+/* Sidebar styles */
+.sidebar {
+  width: 25rem;
+}
+
+.search {
+  margin: 2rem;
+}
+
+
 /* Shows-grid styles */
 .shows-grid {
   max-width: 96rem;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .shows-grid li {
   width: 20rem;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 2rem;
 }
 
 .shows-grid img {
