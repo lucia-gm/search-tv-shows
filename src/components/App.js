@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     const { popularShows, searchedShows, query } = this.state;
     let featuredShows = (searchedShows && searchedShows.length > 0) ? searchedShows : popularShows;
-    let heading = (query.length > 0) ? (searchedShows.length > 0 ? `Search results for: ${query}` : `There are no movies that matched your query. \n These are the popular TV Shows:`) : 'Popular TV Shows';
+    let heading = (query.length > 0) ? (searchedShows.length > 0 ? `Search results for: ${query}` : `There are no movies that matched your query. \n These are the popular TV Shows of the week:`) : 'Popular TV Shows of the week';
     console.log(popularShows);
 
     return (
