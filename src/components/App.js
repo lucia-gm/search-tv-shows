@@ -39,8 +39,14 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SideBar updateSearch={this.handleUpdateSearch}/>
-        <ShowsGrid shows={featuredShows} heading={heading}/>
+        <div className="App-content">
+          <SideBar updateSearch={this.handleUpdateSearch}/>
+          <ShowsGrid shows={featuredShows} heading={heading}/>
+        </div>
+        <footer>
+          <img src={require("../images/TMDb-logo.png")} alt="TMDb logo"/>
+          <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
+        </footer>
       </div>
     );
   }

@@ -22,7 +22,7 @@ main {
 
 
 /* App styles */
-.App {
+.App-content {
   display: flex;
 }
 
@@ -104,5 +104,24 @@ main {
 
 .shows-grid p {
   font-size: 1.4rem;
+  margin: 0;
+}
+
+/* Footer styles */
+footer {
+  width: 100%;
+  text-align: center;
+  background-color:#091C2C;
+  padding: 2rem 0 1rem;
+  margin: 5rem 0 0;
+}
+
+footer img {
+  height: 4rem;
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: #01D474;
   margin: 0;
 }
