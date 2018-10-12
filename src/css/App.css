@@ -15,6 +15,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  text-align: center;
+  margin-top: 6rem;
+}
+
 
 /* App styles */
 .App {
@@ -66,6 +71,10 @@ body {
 
 
 /* Shows-grid styles */
+.shows-grid-heading {
+  white-space: pre-line;
+}
+
 .shows-grid {
   max-width: 96rem;
   list-style: none;

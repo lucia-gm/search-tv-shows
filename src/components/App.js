@@ -10,28 +10,37 @@ class App extends Component {
     this.state = {
       popularShows: [],
       searchedShows: [],
+      query:'',
     }
   }
 
   componentDidMount = () => {
     ShowsAPI.getPopular()
-    .then(response => this.setState({popularShows: response}))
+    .then(response => this.setState({popularShows: response}));
   }
 
   handleUpdateSearch = (query) => {
-    ShowsAPI.search(query)
-    .then(response => this.setState({searchedShows: response}))
+    if (query.length > 0) {
+      ShowsAPI.search(query)
+      .then(response => this.setState({searchedShows: response,
+                                      query: query
+      }));
+   } else {
+     this.setState({searchedShows: [],
+                    query: query});
+   }
   }
 
   render() {
-    const { popularShows, searchedShows } = this.state;
+    const { popularShows, searchedShows, query } = this.state;
     let featuredShows = (searchedShows && searchedShows.length > 0) ? searchedShows : popularShows;
+    let heading = (query.length > 0) ? (searchedShows.length > 0 ? `Search results for: ${query}` : `There are no movies that matched your query. \n These are the popular TV Shows:`) : 'Popular TV Shows';
     console.log(popularShows);
 
     return (
       <div className="App">
         <SideBar updateSearch={this.handleUpdateSearch}/>
-        <ShowsGrid shows={featuredShows}/>
+        <ShowsGrid shows={featuredShows} heading={heading}/>
       </div>
     );
   }
