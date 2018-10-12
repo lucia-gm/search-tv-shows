@@ -31,6 +31,10 @@ class App extends Component {
    }
   }
 
+  hadleGenreChange = (genre) => {
+    console.log(genre)
+  }
+
   render() {
     const { popularShows, searchedShows, query } = this.state;
     let featuredShows = (searchedShows && searchedShows.length > 0) ? searchedShows : popularShows;
@@ -40,7 +44,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-content">
-          <SideBar updateSearch={this.handleUpdateSearch}/>
+          <SideBar onUpdateSearch={this.handleUpdateSearch} onGenreChange={this.hadleGenreChange}/>
           <ShowsGrid shows={featuredShows} heading={heading}/>
         </div>
         <footer>

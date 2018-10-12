@@ -12,3 +12,7 @@ export const search = (query) =>
   .then(response => response.json())
   .then(data => data.results)
 
+export const getGenres = () => 
+  fetch(`${api}/genre/tv/list?api_key=${Configuration.apiKey}`)
+  .then(response => response.json())
+  .then(data => data.genres)
